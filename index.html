@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</head>
+<body>
+  <div class="estrutura shadow-lg">
+    <!--Menu-->
+      <header class="">
+        <div class="border-b md:flex md:items-center flex justify-end p-4 pb-0 shadow-md md:pb-4">
+            <nav>
+              <ul class="list-reset md:flex md:items-center mr-52">
+                <li class="flex justify-end mr-8">
+                  <a class=" block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0" href="#">
+                    Projetos
+                  </a>
+                </li>
+                <li class="md:ml-4">
+                  <a class="border-t block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0" href="#">
+                    Contato
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            </div>
+            
+            <!--Container Diego Murilo-->
+        <div class="mt-1 flex justify-center grid grid-cols-2 h-96">
+                <div class="flex items-center justify-center content-centerflex flex-col ">
+                    <div>Diego Murilo</div>
+                    <div>Front-End Developer</div>
+                    <div>
+                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                            Linkedin
+                          </button>
+                          <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                            GitHub
+                          </button>
+                    </div>
+                </div>
+                <div class="bg-gray-50">
+              
+            </div>
+        </div>
+        <!--Card-->
+        <section class="flex justify-center bg-gray-50">
+        <div class="card-diego border-2 bg-white border-gray-200 border-opacity-75 border-solid rounded-md shadow h-60 w-11/12 mb-4">teste</div>
+            <div class="texto"></div>
+    </section>
+    </header>
+    <article class="">
+        <section class="py-4">
+            <H1>Trabalhos</H1>
+        </section>
+        <!--Carousel-->
+        <div class="flex justify-center py-4">
+<div class="slider owl-carousel ">
+  <div class="card">
+    <div class="img">
+      <img src="panificadora.png" alt="Panificador Benassi">
+    </div>
+    <div class="content">
+      <div class="title">
+        Panificadora Benassi</div>
+      <div class="sub-title">
+        Web Site</div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde
+        voluptas cumque.</p>
+      <div class="btn">
+        <button>Visualizar</button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="img">
+      <img src="stacy.png" alt="Stacy">
+    </div>
+    <div class="content">
+      <div class="title">
+        Stacy Store</div>
+      <div class="sub-title">
+        Web Site</div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde
+        voluptas cumque.</p>
+      <div class="btn">
+        <button>Visualizar</button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="img">
+      <img src="projeto.jpg" alt="">
+    </div>
+    <div class="content">
+      <div class="title">
+        Teste</div>
+      <div class="sub-title">
+        Teste</div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde
+        voluptas cumque.</p>
+      <div class="btn">
+        <button>Visualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--Contato-->
+<div class="mt-20 py-4 bg-gray-400 w-full h-auto ">Contato</div>
+   <div class=" bg-gray-400 w-full h-auto shadow-md py-4 flex justify-evenly items-center">
+     
+     
+              <div class="h-auto w-64 ">
+                  <form class="" action="https://api.web3forms.com/submit" method="POST" id="form">
+  
+                      <input type="hidden" name="apikey" value="YOUR_ACCESS_KEY_HERE">
+                      <input type="hidden" name="subject" value="New Submission from Web3Forms">
+                      <input type="checkbox" name="botcheck" id="" style="display: none;">
+  
+  
+                      <div class="mb-4">
+                          <label for="name" class="block mb-2 text-sm text-black dark:text-gray-400">Nome Completo</label>
+                          <input type="text" name="name" id="name" placeholder="Nome" required class="w-full h-7 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                      </div>
+                      <div class="mb-4">
+                          <label for="email" class="block mb-2 text-sm text-black dark:text-gray-400">Endereço de E-mail</label>
+                          <input type="email" name="email" id="email" placeholder="nome@gmail.com" required class="w-full h-7 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                      </div>
+                      <div class="mb-4">
+  
+                          <label for="phone" class="text-sm text-black dark:text-gray-400">Numero</label>
+                          <input type="text" name="phone" id="phone" placeholder="+55 (DDD) 1234-567" required class="w-full h-7 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                      </div>
+                      <div class="mb-4">
+                          <label for="message" class="block mb-2 text-sm text-black dark:text-gray-400">Sua Mensagem</label>
+  
+                          <textarea rows="2" name="message" id="message" placeholder="Sua mensagem" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
+                      </div>
+                      <div class="mb-2">
+                          <button type="submit" class="w-16 h-8 px-2  text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Enviar</button>
+                      </div>
+                      <p class="text-base text-center text-gray-400" id="result">
+                      </p>
+                  </form>
+              </div>
+     <div class="">
+       <img src="contato.png" width="450px" height="450px" alt="" >
+     </div>
+   </div>
+    </article>
+    <footer class="mt-60 h-40 bg-gray-400">teste</footer>
+ <script src="carousel.js"></script>
+ <script src="contato.js"></script>   
+  </div>
+    </body>
+    
+</html>
