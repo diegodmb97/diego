@@ -4,164 +4,249 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Diego Murilo | Developer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body>
   <div class="estrutura shadow-lg">
     <!--Menu-->
-      <header class="">
-        <div class="border-b md:flex md:items-center flex justify-end p-4 pb-0 shadow-md md:pb-4">
-            <nav>
-              <ul class="list-reset md:flex md:items-center mr-52">
-                <li class="flex justify-end mr-8">
-                  <a class=" block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0" href="#">
-                    Projetos
-                  </a>
-                </li>
-                <li class="md:ml-4">
-                  <a class="border-t block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0" href="#">
-                    Contato
-                  </a>
-                </li>
-              </ul>
-            </nav>
+      <header>
+        <div class="shadow-lg w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+          <div x-data="{ open: false }"
+            class="p-2 flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="p-4 flex flex-row items-center justify-between">
+              <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                  <path x-show="!open" fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                    clip-rule="evenodd"></path>
+                  <path x-show="open" fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
             </div>
-            
-            <!--Container Diego Murilo-->
-        <div class="mt-1 flex justify-center grid grid-cols-2 h-96">
-                <div class="flex items-center justify-center content-centerflex flex-col ">
-                    <div>Diego Murilo</div>
-                    <div>Front-End Developer</div>
-                    <div>
-                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                            Linkedin
-                          </button>
-                          <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                            GitHub
-                          </button>
-                    </div>
+            <nav :class="{'flex': open, 'hidden': !open}"
+              class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+              <a id="projetos"
+                class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                href="#projetos2">Projetos</a>
+              <a id="contato"
+                class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                href="#contato2">Contato</a>
+              <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open"
+                  class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                  <span id="traducao">Idiomas</span>
+                  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                    class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                    <path fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                  x-transition:enter-start="transform opacity-0 scale-95"
+                  x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
+                  x-transition:leave-start="transform opacity-100 scale-100"
+                  x-transition:leave-end="transform opacity-0 scale-95"
+                  class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                  <div class="idiomas px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                    <a language='portugues' class="ativo block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent 
+                          dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white 
+                          dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 
+                          focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none 
+                          focus:shadow-outline" href="#">Portugues</a>
+                    <a language='english' class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg 
+                          dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white 
+                          dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 
+                          hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Ingles</a>
+                  </div>
                 </div>
-                <div class="bg-gray-50">
-              
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!--Container Diego Murilo-->
+        <div class=" flex justify-center  grid grid-cols-2 h-96 pl-4 color">
+          <div title="Informações" class="flex justify-center items-center content-center flex flex-col " data-aos="fade-up">
+            <div class="Diego text-yellow-500">Diego Murilo</div>
+            <div class="font2 text-gray-500">Front-End Developer</div>
+            <div>
+              <button
+                class="bg-transparent hover:bg-blue-600 text-black duration-300 font-semibold hover:text-white py-2 px-4 border border-gray-900 border-opacity-40 hover:border-transparent rounded">
+                <a href="https://www.linkedin.com/in/diego-murilo-bicudo-241a38143/" target="_blank">Linkedin</a>
+              </button>
+              <button
+                class="bg-transparent hover:bg-black transform delay-150 duration-300 text-black font-semibold hover:text-white py-2 px-4 border border-opacity-40 border-gray-900 hover:border-transparent rounded">
+                GitHub
+              </button>
             </div>
+          </div>
+          <div class="flex justify-end color">
+            <div class="img1">
+      
+            </div>
+          </div>
         </div>
         <!--Card-->
-        <section class="flex justify-center bg-gray-50">
-        <div class="card-diego border-2 bg-white border-gray-200 border-opacity-75 border-solid rounded-md shadow h-60 w-11/12 mb-4">teste</div>
-            <div class="texto"></div>
-    </section>
+        <div id="info" class="card h-auto flex justify-center color">
+          <div
+            class="card-diego border-2 bg-white border-gray-200 border-opacity-75 border-solid rounded-md shadow h-auto w-11/12 mb-4"
+            data-aos="fade-up">
+            <h1 id="sobremim" class="pl-12 py-2 font2 text-gray-500">Sobre-mim</h1>
+            <div title="Sobre-mim" class="flex justify-center pb-4 ">
+              <img class="pl-2 rounded " src="img/diego.jpg" width="120px" height="98px" alt="">
+              <p class="w-4/5 pl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur dolor
+                perspiciatis deleniti
+                laudantium quam, odit facilis suscipit dolore! Quisquam sint earum deleniti vel provident libero, doloribus
+                similique consectetur laboriosam!</p>
+            </div>
+          </div>
+        </div>
     </header>
-    <article class="">
-        <section class="py-4">
-            <H1>Trabalhos</H1>
-        </section>
+    <article>
+        <div class="py-4 bg-white">
+            <H1 id="projetos2"  class="fonts text-gray-500 text-2xl ml-4">Projetos</H1>
+        </div>
         <!--Carousel-->
-        <div class="flex justify-center py-4">
-<div class="slider owl-carousel ">
+        <div class="flex justify-center py-4 bg-white">
+<div title="Projetos" class="slider owl-carousel ">
   <div class="card">
     <div class="img">
-      <img src="panificadora.png" alt="Panificador Benassi">
+      <img src="img/panificadora.png" alt="Panificador Benassi">
     </div>
     <div class="content">
       <div class="title">
         Panificadora Benassi</div>
       <div class="sub-title">
         Web Site</div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde
-        voluptas cumque.</p>
+        <p id="textpanificadora" class="sub1">
+        Este projeto foi desemvolvido no 1º semestre da faculdade, onde aplicamos os primeiros conceitos de HTML, CSS e Javascript. </p>
       <div class="btn">
-        <button>Visualizar</button>
+        <button id="visualizar1" title="Visualizar">Visualizar</button>
       </div>
     </div>
   </div>
   <div class="card">
     <div class="img">
-      <img src="stacy.png" alt="Stacy">
+      <img src="img/stacy.png" alt="Stacy">
     </div>
     <div class="content">
       <div class="title">
         Stacy Store</div>
       <div class="sub-title">
         Web Site</div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde
-        voluptas cumque.</p>
+      <p id="texto2" class="sub1">
+        Este belo projeto foi desemvolvido no 2º semestre, este ano.
+      Utilizamos Vue, Nuxt.js e Tailwind para o desemvolvimento do projeto.</p>
       <div class="btn">
-        <button>Visualizar</button>
+        <button id="visualizar2" title="Visualizar">Visualizar</button>
       </div>
     </div>
   </div>
   <div class="card">
     <div class="img">
-      <img src="projeto.jpg" alt="">
+      <img src="img/portfolio.png" alt="">
     </div>
     <div class="content">
       <div class="title">
-        Teste</div>
+        Diego Murilo</div>
       <div class="sub-title">
-        Teste</div>
-      <p>
+        Portfólio</div>
+        <p id="texto3" class="sub1">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde
         voluptas cumque.</p>
       <div class="btn">
-        <button>Visualizar</button>
+        <button id="visualizar3" title="Visualizar">Visualizar</button>
       </div>
     </div>
   </div>
 </div>
 </div>
 <!--Contato-->
-<div class="mt-20 py-4 bg-gray-400 w-full h-auto ">Contato</div>
+<div class=" py-4 w-full h-auto fonts bg-white text-gray-500 text-2xl pl-4" id="contato2">Contato</div>
    <div class=" bg-gray-400 w-full h-auto shadow-md py-4 flex justify-evenly items-center">
-     
-     
-              <div class="h-auto w-64 ">
-                  <form class="" action="https://api.web3forms.com/submit" method="POST" id="form">
-  
-                      <input type="hidden" name="apikey" value="YOUR_ACCESS_KEY_HERE">
-                      <input type="hidden" name="subject" value="New Submission from Web3Forms">
-                      <input type="checkbox" name="botcheck" id="" style="display: none;">
-  
-  
-                      <div class="mb-4">
-                          <label for="name" class="block mb-2 text-sm text-black dark:text-gray-400">Nome Completo</label>
-                          <input type="text" name="name" id="name" placeholder="Nome" required class="w-full h-7 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-                      </div>
-                      <div class="mb-4">
-                          <label for="email" class="block mb-2 text-sm text-black dark:text-gray-400">Endereço de E-mail</label>
-                          <input type="email" name="email" id="email" placeholder="nome@gmail.com" required class="w-full h-7 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-                      </div>
-                      <div class="mb-4">
-  
-                          <label for="phone" class="text-sm text-black dark:text-gray-400">Numero</label>
-                          <input type="text" name="phone" id="phone" placeholder="+55 (DDD) 1234-567" required class="w-full h-7 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-                      </div>
-                      <div class="mb-4">
-                          <label for="message" class="block mb-2 text-sm text-black dark:text-gray-400">Sua Mensagem</label>
-  
-                          <textarea rows="2" name="message" id="message" placeholder="Sua mensagem" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
-                      </div>
-                      <div class="mb-2">
-                          <button type="submit" class="w-16 h-8 px-2  text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Enviar</button>
-                      </div>
-                      <p class="text-base text-center text-gray-400" id="result">
-                      </p>
-                  </form>
-              </div>
-     <div class="">
-       <img src="contato.png" width="450px" height="450px" alt="" >
+    <div class="h-auto w-64 " data-aos="fade-left">
+      <form name="formuser">
+        <div class="mb-4">
+          <label id="nome" for="name" class="block mb-2 text-sm text-black dark:text-gray-400">Nome Completo</label>
+          <input type="text" name="name" id="name" placeholder="Nome"
+            class="w-full h-7 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+        </div>
+        <div class="mb-4">
+          <label for="email" id="endemail" class="block mb-2 text-sm text-black dark:text-gray-400">Endereço de
+            E-mail</label>
+          <input type="email" name="email" id="email" required placeholder="nome@gmail.com"
+            class="w-full h-7 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+        </div>
+        <div class="mb-4">  
+          <label id="numero" for="phone" class="text-sm text-black dark:text-gray-400">Numero</label>
+          <input type="number" name="phone" id="phone" placeholder="+55 (DDD) 1234-567"
+            class="w-full h-7 px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+        </div>
+        <div class="mb-4">
+          <label id="suamensagem" for="message" class="block mb-2 text-sm text-black dark:text-gray-400">Sua
+            Mensagem</label>
+    
+          <textarea rows="2" name="message" id="message" placeholder="Sua mensagem"
+            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"></textarea>
+        </div>
+        <div class="mb-2">
+          <button type="button" id="submit"
+            class="w-16 h-8 px-2  text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Enviar</button>
+        </div>
+      </form>
+    </div>
+     <div title="Contato" data-aos="fade-right">
+       <img class="fotocontato" src="img/contato.png" width="450px" height="450px" alt="" >
      </div>
    </div>
     </article>
-    <footer class="mt-60 h-40 bg-gray-400">teste</footer>
- <script src="carousel.js"></script>
- <script src="contato.js"></script>   
+    <div class="bg-white h-60">
+    </div>
+    <div 
+    <div class="grid grid-cols-3 grid-rows-1  h-40 text-white bg-gray-400">
+      <div title="Diego Murilo" class=" flex justify-center content-center items-center"  data-aos="fade-right">
+        <div title="Diego Murilo" class="diego flex-col" >
+          <div class="Diego text-yellow-500 text-xl">Diego Murilo</div>
+          <div class="font2 text-gray-500 text-base">Front-End Developer</div>
+          </div>
+      </div>
+      <nav class="flex items-center">
+        <div class="flex flex-col">
+        <a id="projetos1" class="hover:text-blue-900 hover:text-opacity-50" href="#projetos2">Projetos</a>
+        <a id="contato1" class="hover:text-blue-900 hover:text-opacity-50" href="#contato2">Contato</a>
+        <a id="info2" class="hover:text-blue-900 hover:text-opacity-50" href="#info">Informaçôes</a>
+        </div>
+      <div id="linha-vertical"></div>
+      </nav>
+      <div></div>
+      <footer title="footer" id="todososdireitos" class="footer col-span-3 flex justify-center  fonts">
+        Copyright © 2021 Diego Murilo Font-end Developer. Todos os direitos reservados.
+      </footer> 
+    </div>
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ <script src="js/carousel.js"></script>
+ <script src="js/contato.js"></script>
+ <script src="js/lingua.js"></script>
+ <script src="js/app.js"></script>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+   AOS.init({
+     duration: 1000,
+   });
+ </script>   
   </div>
     </body>
     
